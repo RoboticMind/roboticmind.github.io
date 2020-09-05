@@ -6,6 +6,8 @@ function getLatestRelease() {
         dataType: 'json',
         success: function(data) { 
             $('#wallet-version').text('Current Wallet Version: ' + data.name); 
+            
+            String.prototype.endsWith = "".endsWith || function(s){return !this.split(s).pop();}; //IE11 support
 
             data.assets.forEach(function(assetFile) {
                 
