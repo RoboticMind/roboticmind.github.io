@@ -7,10 +7,9 @@ function getLatestRelease() {
         success: function(data) { 
             $('#wallet-version').text('Current Wallet Version: ' + data.name); 
             
+            String.prototype.endsWith = "".endsWith || function(s){return !this.split(s).pop();}; //IE11 support
 
             data.assets.forEach(function(assetFile) {
-                
-                String.prototype.endsWith = "".endsWith || function(s){return !this.split(s).pop();}; //IE11 support
 
                 if (assetFile.name.endsWith("win64-setup.exe")){
 
