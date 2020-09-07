@@ -7,7 +7,7 @@ function getLatestRelease() {
         success: function(data) { 
             $('#wallet-version').text('Current Wallet Version: ' + data.name); 
             
-            String.prototype.includes = String.prototype.includes || function(search, start){'use strict';if (start === undefined) { start = 0; }return this.indexOf(search, start) !== -1;};
+            String.prototype.includes = String.prototype.includes || function(val, start){'use strict';return this.indexOf(val, start) !== -1;};
             //IE11 support
 
             var has64BitHotfix = false;
