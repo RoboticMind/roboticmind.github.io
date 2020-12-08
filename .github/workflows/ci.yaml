@@ -9,7 +9,7 @@ jobs:
         uses: actions/setup-ruby@v1
         with:
           ruby-version: 2.6
-      run: |
+        run: |
           bundle install
           bundle exec jekyll build
           
