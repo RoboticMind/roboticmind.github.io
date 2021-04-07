@@ -7,41 +7,20 @@ description: "Where to buy Gridcoin"
         <div class="row text-center">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                 <h3>How to buy Gridcoin?</h3>
-                <p>On most exchanges you need to first <a href="https://www.bitcoin.com/buy-bitcoin">buy Bitcoin</a> in order to buy Gridcoin.</p>
+                <p>On most centralized exchanges you need to first <a href="https://www.bitcoin.com/buy-bitcoin">buy Bitcoin</a> in order to buy Gridcoin, except from <a href="https://flyp.me">Flyp.me</a> where you can exchange several cryptocurrencies for Gridcoin.</p>
             </div>
         </div>
         <div class="row text-center">
-            <!--
-            <div class="col-12 col-sm-4 col-md-4 col-lg-4">
-                <h3>Decentralized exchanges</h3>
-                <ul>
-                    
-                    <li>
-                        <a href="https://market.rudex.org/#/asset/RUDEX.GRC">
-                            <img src="../assets/img/Exchanges/RUDEX.png" alt="RUDEX" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://openledger.io/#/market/OPEN.GRC_OPEN.BTC">
-                            <img src="../assets/img/Exchanges/OL.png" alt="OpenLedger" />
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            -->
             <div class="col-12 col-sm-6 col-md-6 col-lg-6">
                 <h3>Centralized exchanges</h3>
                 <ul>
+                    {% for exchange in site.data.exchanges.centralized-exchanges %}
                     <li>
-                        <a href="https://www.southxchange.com/Market/Book/GRC/BTC">
-                            <img width="300" src="../assets/img/Exchanges/southxchange-light.png" alt="SouthXchange" />
+                        <a href="{{exchange.link}}">
+                            <img width="300" src="{{exchange.image}}" alt="{{exchange.name}}">
                         </a>
                     </li>
-                    <li>
-                        <a href="https://txbit.io/Asset/GRC">
-                            <img width="300" src="../assets/img/Exchanges/txbit.svg" alt="Txbit.io">
-                        </a>
-                    </li>
+                    {% endfor %}
                 </ul>
             </div>
 
@@ -49,19 +28,19 @@ description: "Where to buy Gridcoin"
                 <h3>Free/Starter Gridcoin</h3>
                 <ul>
                     <li>
-                        <a href="https://gridcoin.ch/faucet.php">Gridcoin Switzerland Faucet</a>
+                        Use the <a href="https://gridcoin.ch/faucet.php">Gridcoin Switzerland Faucet</a>
                     </li>
                     <li>
-                        <a href="https://gridcoinstats.eu/faucet.php">GridcoinStats Faucet</a>
+                        Use the <a href="https://gridcoinstats.eu/faucet.php">GridcoinStats Faucet</a>
                     </li>
                     <li>
-                        Visit <a href="http://uscore.net/">uscore.net</a>, receive GRC by registering for their regular Gridcoin/BOINC related newsletter.
+                        Join the <a href="https://discord.gg/jf9XX4a">Discord server</a> and register with the wallet bot to use the <code>%faucet</code> command in the <code>#wallet-bot</code> channel
                     </li>
                     <li>
                         Join <a href="https://steemit.com/trending/gridcoin">Steemit</a> and post original Gridcoin content then exchange rewards for Gridcoin.
                     </li>
                     <li>
-                        Work on Gridcoin development bounties.
+                        Work on Gridcoin development bounties. See the lists <a href="https://github.com/gridcoin-community/gridcoin-research/issues?q=is%3Aissue+label%3ABounty+is%3Aopen">here</a> and <a href="https://github.com/gridcoin-community/Gridcoin-Tasks/issues?q=is%3Aopen+is%3Aissue+label%3Abounty">here</a>
                     </li>
                 </ul>
             </div>

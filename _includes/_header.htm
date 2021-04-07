@@ -2,6 +2,7 @@
     <div class="container justify-content-center">
         <div class="row">
             <div class="mx-auto">
+                <a href="#main" class="sr-only sr-only-focusable bg-dark text-light">Jump to Content</a>
                 <a name="Nav"></a> <!-- Nav link, returning user to top of website -->
                 <a class="navbar-brand" href="/" rel="tooltip" data-toggle="tooltip" title="Gridcoin - Securely rewarding BOINC computation on top of POS!" data-placement="bottom"><img src="/assets/img/grc-title2.png" alt="Gridcoin title" /></a>
                 <button class="navbar-toggler navbar-dark grcbtn" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +21,6 @@
                             <a class="dropdown-item" href="/blog.htm">Blog</a>
                             <a class="dropdown-item" href="/contact.htm">Contact Us</a>
                             <a class="dropdown-item" href="https://www.facebook.com/gridcoins">Facebook</a>
-                            <a class="dropdown-item" href="https://cryptocurrencytalk.com/forum/464-gridcoin-grc/">Forum</a>
                             <a class="dropdown-item" href="https://github.com/gridcoin-community/Gridcoin-Research">Github</a>
                             <a class="dropdown-item" href="https://www.reddit.com/r/gridcoin">Reddit</a>
                             <a class="dropdown-item" href="https://steemit.com/trending/gridcoin">Steemit</a>
@@ -43,12 +43,12 @@
                             <h6 class="dropdown-header text-center">Publications</h6>
                             <a class="dropdown-item" href="/assets/img/whitepaper.pdf">Gridcoin Whitepaper</a>
                             <a class="dropdown-item" href="/assets/img/grc-bluepaper-section-1.pdf">Gridcoin Staking Bluepaper</a>
+                            <a class="dropdown-item" href="/wiki/publications.html">Publications Mentioning Gridcoin</a>
                             <a class="dropdown-item" href="https://boinc.berkeley.edu/wiki/Publications_by_BOINC_projects">BOINC Project Publications</a>
                             <a class="dropdown-item" href="https://scholar.google.co.uk/scholar?q=BOINC">BOINC Academic Articles</a>
                             <div class="dropdown-divider"></div>
                             <h6 class="dropdown-header text-center">GRC Info</h6>
-                            <a class="dropdown-item" href="http://wiki.gridcoin.us/Main_Page">Gridcoin Wiki</a>
-                            <!--<a class="dropdown-item" href="https://www.reddit.com/r/CryptoWikis/wiki/gridcoin_basicinfo">Gridcoin Basic Info</a>-->
+                            <a class="dropdown-item" href="/wiki/">Gridcoin Wiki</a>
                             <a class="dropdown-item" href="https://github.com/gridcoin-community/Gridcoin-Marketing">Gridcoin Marketing and Media Files</a>
                             <div class="dropdown-divider"></div>
                             <h6 class="dropdown-header text-center">Development</h6>
@@ -56,7 +56,7 @@
                             <a class="dropdown-item" href="https://github.com/gridcoin-community/Gridcoin-Research/graphs/contributors">Core Wallet Contributors</a>
                             <a class="dropdown-item" href="/wiki/rpc.html">RPC Wiki Page</a>
                             <a class="dropdown-item" href="/#Downloads">Wallet Downloads</a>
-                            <a class="dropdown-item" href="https://download.gridcoin.us/download/downloadstake/signed/snapshot.zip">Official Snapshot</a>
+                            <a class="dropdown-item" href="https://snapshot.gridcoin.us/snapshot.zip">Official Snapshot</a>
                             <div class="dropdown-divider"></div>
                             <h6 class="dropdown-header text-center">Tools</h6>
                             <a class="dropdown-item" href="https://signature.statseb.fr/">Forum Signatures</a>
@@ -71,7 +71,7 @@
                             <h6 class="dropdown-header text-center">Main Guides</h6>
                             <a class="dropdown-item" href="/guides/boinc-install.htm">Solo-Crunching</a>
                             <a class="dropdown-item" href="/guides/pool.htm">Pool-Crunching</a>
-                            <a class="dropdown-item" href="/guides/investor-gridcoin-setup.htm">Investor mode</a>
+                            <a class="dropdown-item" href="/guides/noncruncher-gridcoin-setup.htm">Non-Cruncher</a>
                             <div class="dropdown-divider"></div>
                             <h6 class="dropdown-header text-center">Other Guides</h6>
                             <a class="dropdown-item" href="/guides/whitelist.htm">Project Whitelist</a>
@@ -88,20 +88,12 @@
                             </a>
                         <div class="dropdown-menu" aria-labelledby="trade-dropdown">
                             <h6 class="dropdown-header text-center">Exchanges</h6>
-                            <!--
-                                <a class="dropdown-item" href="https://bitshares.openledger.info/#/market/OPEN.GRC_OPEN.BTC"><i class="fa fa-exchange"></i> OpenLedger</a>
-                            -->
-                            <!--
-                            <a class="dropdown-item" href="https://market.rudex.org/#/asset/RUDEX.GRC">RUDEX</a>
-                            -->
-                            <a class="dropdown-item" href="https://www.southxchange.com/Market/Book/GRC/BTC">SouthXchange</a>
-                            <a class="dropdown-item" href="https://txbit.io/Asset/GRC">Txbit.io</a>
+                            {% for exchange in site.data.exchanges.centralized-exchanges %}
+                            <a class="dropdown-item" href="{{exchange.link}}">{{exchange.name}}</a>
+                            {% endfor %}
                             <div class="dropdown-divider"></div>
                             <h6 class="dropdown-header text-center">3rd party wallets</h6>
                             <a class="dropdown-item" href="https://holytransaction.com/">HolyTransaction</a>
-                            <div class="dropdown-divider"></div>
-                            <h6 class="dropdown-header text-center">Where to spend</h6>
-                            <a class="dropdown-item" href="https://cointopay.com/M_MarketOverview.jsp">Cointopay Marketplace</a>
                         </div>
                     </div>
                     <!--    Pool/Stats Links    -->
@@ -116,9 +108,8 @@
                             <div class="dropdown-divider"></div>
                             <h6 class="dropdown-header text-center">Block Explorers</h6>
                             <a class="dropdown-item" href="https://www.gridcoinstats.eu/block">GridcoinStats</a>
-                            <!--<a class="dropdown-item" href="https://www.nuad.de/block-explorer/">Nuad.de</a>-->
                             <a class="dropdown-item" href="https://gridcoin.network/">Gridcoin.network</a>
-                            <!--<a class="dropdown-item" href="https://grcexplorer.neuralminer.io/">NeuralMiner.io</a>-->
+                            <a class="dropdown-item" href="https://gridcoin.ch/dashboard">Gridcoin.ch</a>
                             <div class="dropdown-divider"></div>
                             <h6 class="dropdown-header text-center">Team Stats</h6>
                             <a class="dropdown-item" href="https://boincstats.com/en/stats/-1/team/detail/118094994/projectList">Boincstats</a>
@@ -135,8 +126,8 @@
                         </div>
                     </div>
                     <div class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show" >
-                        <a href="/#Downloads"class="nav-link btn grcbtn">
-                            <span class="oi oi-cloud-download"></span>
+                        <a href="/#Downloads"class="nav-link btn grcbtn" role="tooltip" title="Downloads" aria-label="downloads" data-toggle="tooltip">
+                            <span class="oi oi-data-transfer-download"></span>
                         </a>
                     </div>
                 </div>

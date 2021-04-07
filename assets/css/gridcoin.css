@@ -18,6 +18,14 @@ body {
 .grc-bgcolor{
     background-color: #1A2632;
 }
+
+.anchor-adjust{
+    position: relative;
+    margin-top: -76px;
+    padding-top: 76px;
+/* adjusts any anchors to match with the banner. Similar to the one done with .doc-container h1-h6*/
+}
+
 .grcbtn {
     border-radius: 50rem;
     padding-left: 1rem !important;
@@ -59,7 +67,17 @@ body {
         max-height: 85vh;
     }
 }
+/*work around to get check marks & other special chars to render as white text*/
+.text-special-color-white{
+    color:transparent;
+    text-shadow: 0 0 0 white;
+}
 /*End Fix*/
+dfn{
+    text-decoration: 1px dotted underline;
+    cursor: help;
+    font-style: normal;
+}
 .grclogoimg {
     width: 200px;
     padding-top: 50px;
@@ -234,6 +252,13 @@ body {
 .table-color-no{
     background-color: darkred;
 }
+.table-color-gdpr-yes{ /* warns that you need to enable stats */
+    background-color: #999900;
+}
+.table-color-gdpr-yes a{ /* makes the link underlined and not a hard to read blue*/
+    color: inherit;
+    text-decoration: underline;
+}
 
 /*----end whitelist.erb----*/
 /*terminology.htm*/
@@ -304,22 +329,22 @@ body {
 }
 /*----End Earn-GRC.htm----*/
 
-/*investerEarn-GRC.htm*/
-.invester-earnGRC div>ul {
+/*noncruncherEarn-GRC.htm*/
+.noncruncher-earnGRC div>ul {
     list-style-type: none;
     padding-left: 0;
 }
-.invester-earnGRC li {
+.noncruncher-earnGRC li {
     padding-top: 10px;
 }
-/*----End investerEarn-GRC.htm----*/
+/*----End noncruncherEarn-GRC.htm----*/
 
-/*invester-GRC-setup.htm*/
-.invest-grc-setup {
+/*noncruncher-GRC-setup.htm*/
+.noncruncher-grc-setup {
     padding-top: 25px;
     padding-bottom: 25px;
 }
-/*----End invester-grc-setup.htm----*/
+/*----End noncruncher-grc-setup.htm----*/
 
 .grc-misc {
     padding-top: 140px;
@@ -329,28 +354,16 @@ body {
 .grc-ref {
     padding-top: 140px;
 }
-/*div.dropdown a {
-    text-decoration:none;
-  }
-  
-  div.dropdown a.dropdown-header {
-    color:black !important;
-  }
-  
-  div.footer_placeholder a {
-    text-decoration:none;
-    font-weight:normal;
-  }
-  */
-  .min-h-80{
-      min-height: 80vh;
-  }
-  .highlight { 
-      /* applies to markdown rendering on four space indented code block  */
-      background-color: #454d55;
-      color: white;
-      padding-left: 2px;
-   }
+.min-h-80{
+    min-height: 80vh;
+}
+.highlight { 
+    /* applies to markdown rendering on four space indented code block  */
+    background-color: #454d55;
+    color: white;
+    padding-left: 2px;
+}
+/* wiki */
   .docs-container{
     padding-top: 130px;
     text-align:left;
@@ -383,7 +396,9 @@ body {
      margin: 0px auto 16px auto;
      /* 16px gives spacing on the bottom on mobile when collapsed*/
  }
-
+ .docs-menu-sv{
+     width: 295px; /*Looks cleaner on one slightly longer line than having a word on two*/
+ }
  .docs-container h1, .docs-container h2, .docs-container h3, .docs-container h4, .docs-container h5, .docs-container h6{
     position: relative;
     margin-top: -76px;
@@ -398,3 +413,33 @@ body {
  .docs-container a{
      color: #3f9bff;
  }
+.docs-container blockquote {
+    border-left: 3px solid grey;
+    padding-left: 20px;
+}
+.docs-container li >  p + ul { /* Decrease larger <p> spacing from a bullet point to its sub bullet points */
+    margin-top: -1.0em; /* negative margins used instead of selecting the <p> element because that's really tricky or potentially impossible*/
+}
+/*add icon for external links in the wiki*/
+.docs-container a::after{
+    content:"";
+    width:1ch;
+    height:1ch;
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image:url(/assets/img/wiki/external_link.svg);
+    margin-left: 0.1ch;
+    margin-right:0.2ch;
+}
+
+/* don't add anything on intra-wiki or intra-site links*/
+.docs-container a[title="wikilink"]::after, 
+.docs-container a[title="sitelink"]::after,
+.docs-container .footnote::after,
+.docs-container .reversefootnote::after,
+.docs-menu a::after{
+    width:0px;
+    height: 0px;
+    margin:0px;
+}

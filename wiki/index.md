@@ -24,8 +24,8 @@ There are no limitations to a single BOINC project, providing the
 flexibility to be rewarded for virtually any type of computational
 process.
 
-Gridcoin was launched on October 16th, 2013 by Rob Halförd, following an
-announcement on [CryptocurrencyTalk](https://cryptocurrencytalk.com/topic/1416-gridcoin-grc-information-classic-in-retirement/).
+Gridcoin was launched on October 16th, 2013 by Rob Halförd, following [an
+announcement on CryptocurrencyTalk](https://web.archive.org/web/20150622170203/cryptocointalk.com/topic/1416-gridcoin-grc-information-classic-in-retirement/).
 
 The coin compensates the coin miners (researchers) for participating in
 [BOINC](boinc "wikilink") projects that may lead to advances in
@@ -53,7 +53,7 @@ The compute power to secure the block chain is minimal.
 
 ## Metrics
 
-**[Gridcoin-Classic](Gridcoin-Classic "wikilink") - Retired**
+**[Gridcoin-Classic](gridcoin-classic "wikilink") - Retired**
 
   - Launched: October 16th, 2013
   - Retired: April 20th, 2015
@@ -124,6 +124,7 @@ scientific computations instead of securing the blockchain.
   - Block Explorers:
       - [Gridcoinstats](https://gridcoinstats.eu/)
       - [Gridcoin.network](https://gridcoin.network/)
+      - [Gridcoin.ch](https://gridcoin.ch/dashboard)
 
 <!-- end list -->
 
@@ -149,10 +150,12 @@ scientific computations instead of securing the blockchain.
       - [AUR daemon](https://aur.archlinux.org/packages/gridcoinresearchd/)
 
 <!-- end list -->
-
+  {% comment %} This lists out all the exchanges from _data/exchanges.yml {% endcomment %}
   - Exchanges:
-      - [Txbit](https://txbit.io/Trade/GRC/BTC)
-      - [SouthXchange](https://www.southxchange.com/Market/Book/GRC/BTC)
+      {%- for exchange in site.data.exchanges.centralized-exchanges %}
+      - [{{exchange.name}}]({{exchange.link}})
+      {%- endfor %}
+
 
 <!-- end list -->
 
@@ -169,8 +172,6 @@ scientific computations instead of securing the blockchain.
 <!-- end list -->
 
   - Forums:
-      - [Cryptocurrencytalk](https://cryptocurrencytalk.com/forum/464-gridcoin-grc/)
-      - [Cryptocurrencytalk macOS](https://cryptocurrencytalk.com/topic/13139-os-x-builds-feedback-bug-reporting/)
       - [Bitcointalk](https://bitcointalk.org/index.php?topic=324118.0)
       - [Steemit](https://steemit.com/created/gridcoin)
       - [Steemit Community](https://steemit.com/created/hive-161364)
@@ -200,8 +201,10 @@ scientific computations instead of securing the blockchain.
   - Faucets:
     - [Freegridco.in](https://freegridco.in/)
     - [Gridcoin Switzerland](https://gridcoin.ch/faucet)
+    - [Gridcoinstats](https://gridcoinstats.eu/faucet)
 
 ## Other Wikis
 
   - [Wikipedia](https://en.wikipedia.org/wiki/Gridcoin)
   - [Russian Reddit Wiki](https://reddit.com/r/russiangridcoin/wiki/)
+  - [Old Gridcoin Wiki](https://github.com/gridcoin-community/Gridcoin-Wiki/wiki)
