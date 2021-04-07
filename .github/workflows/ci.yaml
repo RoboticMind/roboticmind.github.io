@@ -9,12 +9,13 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set up Ruby 2.6
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
+          bundler-cache: true
 
-      - name: Install Bundle Dependencies 
-        run: bundle install
+      #- name: Install Bundle Dependencies 
+      #  run: bundle install
 
       - name: Build
         run: bundle exec jekyll build
