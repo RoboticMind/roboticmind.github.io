@@ -441,6 +441,12 @@ dfn{
     background-color: #343434;
     border: dotted;
 }
+.docs-container .card {
+    height: 27.5rem;
+}
+.docs-container .card-img-top {
+    max-height: 21.5rem;
+}
 
 .cookies-eu-banner {
     width:inherit;
