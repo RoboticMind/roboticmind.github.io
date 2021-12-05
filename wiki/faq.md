@@ -35,8 +35,8 @@ reward research. Gridcoin compares participants in each project by their
 subsidiary credits earned in BOINC to measure performance in relation to
 dynamic inner project network average.
 
-BOINC has been rewarding scientific work units in a credit system since
-2003. In case a project maintainer maliciously decides to give out more
+BOINC has been rewarding scientific work units in a credit system since 2003. 
+In case a project maintainer maliciously decides to give out more
 credits than appropriate, it only affects the inner project competition.
 The maximum share of new Gridcoins for this project stays the same
 percentage (subject to the number of total projects). And projects can be
@@ -233,9 +233,26 @@ only.
 ---
 ### What happens if I stake on a fork?
 
-When you stake on a fork, the stake you see is not actually legitimate. When your wallet figures out that it is on a fork, you will see these rewards disappear as the wallet corrects itself. This process happens automatically. While frustrating, once off of the fork, you are still able to stake again. 
+When you stake on a [fork](forks "wikilink"), the stake you see is not actually a real stake on the main chain. When your wallet figures out that it is on a fork, you will see these rewards disappear as the wallet corrects itself. This process happens automatically. While frustrating, once off of the fork, you are still able to stake again. 
 
 ---
+
+### My pending rewards are stuck at 16384 GRC
+
+If you see your pending rewards at 16384 GRC, you have hit the maximum amount of
+Gridcoin that can be sent per stake. When you stake you will only earn 16384 GRC
+and any amount of extra work done will not be included. If you keep hitting this
+limit, make sure you are running your wallet to stake 24/7 (or close to it). If you are, 
+you should get more Gridcoin to stake more frequently. 
+
+If you want to get an estimate of how likely you are to stake *before* that limit, you can try solving 
+for that probability using:
+`16384/(magnitude/4) = -ln( 1 - Probability ) * 10000 / Balance * Difficulty`.  
+The probability there are the odds that you stake at least once at any point before that limit (it's a confidence interval).
+
+Note: It is highly unlikely for most users to run into this limit. It requires a very
+high magnitude to possibly run into this.
+
 # BOINC
 
 ---
@@ -314,7 +331,7 @@ This also means that diff is directly proportional to that average net coins sta
 TL;DR:
 When more coins are staking the difficulty increases which makes it harder to stake and vice versa.
 
-The formulas to calculate diff may be found in section 2.1 of the [staking bluepaper](/assets/img/grc-bluepaper-section-1.pdf "sitelink").
+The formulas to calculate diff may be found in section 2.1 of the [staking bluepaper](/assets/docs/grc-bluepaper-section-1.pdf "sitelink").
 
 ---
 ### How to call commands when starting Gridcoin Wallet on Windows?
@@ -526,4 +543,4 @@ it can be impossible to send. To fix this, you can try consolidating them using 
 `consolidateunspent` [rpc](rpc "wikilink") command. For each of your addresses,
 try running `consolidateunspent <address>`. After this finishes, try sending
 the transaction again. This may require multiple rounds of the command if you
-have a lot of small transactions
+have a lot of small transactions.

@@ -132,7 +132,7 @@ to pass
 ## Whitelist
 
 Polls to remove or add projects to the whitelist. For an overview of the process
-that must be completed beforhand to add a project, please view the 
+that must be completed beforehand to add a project, please view the 
 [whitelist process](whitelist-process "wikilink") wiki page. For the removal of a project, 
 there must be an attempt at contact with the project admin before making the poll 
  
@@ -190,8 +190,8 @@ topic and that new poll would be binding
 
 Active vote weight aims to find the number of vote weight active on the network.
 It looks at the number of coins that are [staking](staking "wikilink") and the
-[magnitude](magnitude "wikilink") not in the pools. AVW is calculated at the 
-time of the poll
+[magnitude](magnitude "wikilink") not in the [pools](pools "wikilink"). AVW is 
+calculated at the time of the poll
 
 The percent AVW on a poll is the percent of the network's total AVW that has voted
 on the poll. Note that it is possible to have a poll with greater 
