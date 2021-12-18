@@ -448,6 +448,27 @@ dfn{
     max-height: 21.5rem;
 }
 
+/* Change cards to be shorter and in two columns on mobile */
+@media (max-width:575px) {
+    .docs-container .card {
+        height: 22.25rem;
+    }
+    .card-columns {
+        -webkit-column-count:2;
+        -moz-column-count:2;
+        column-count:2;
+        -webkit-column-gap:1.25rem;
+        -moz-column-gap:1.25rem;
+        column-gap:1.25rem;
+        orphans:1;
+        widows:1
+    }
+    .card-columns .card {
+        display:inline-block;
+        width:100%
+    }
+}
+
 .cookies-eu-banner {
     width:inherit;
     background: #7E11dE;
