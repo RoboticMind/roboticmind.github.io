@@ -3,9 +3,6 @@ title: Team and Contributors
 layout: wiki
 description: List of people and users involved in the development of Gridcoin
 ---
-{% comment %}
-Note that the cards are placed top to bottom then left to right
-{% endcomment %}
 
 # Team and Contributors
 
@@ -13,7 +10,7 @@ Note that the cards are placed top to bottom then left to right
 
 *The main developers of the Gridcoin wallet*
 
-{% include _start_card_column.htm %}
+{% include _start_row.htm %}
 
 {% include _create_card.htm
 src="https://github.com/jamescowens.png"
@@ -53,12 +50,12 @@ text="Core Developer"
 %}
 
 
-{% include _end_card_column.htm %}
+{% include _end_row.htm %}
 
 ## Website Developers
 *The developers and maintainers of the gridcoin.us website*
 
-{% include _start_card_column.htm %}
+{% include _start_row.htm %}
 
 {% include _create_card.htm
 src="https://github.com/roboticmind.png"
@@ -82,11 +79,11 @@ title="Ben Swinburn (ShmoogleOsukami)"
 text="Gridcoin.us Maintainer"
 %}
 
-{% include _end_card_column.htm %}
+{% include _end_row.htm %}
 
 
 ## Other Roles in the Community
-{% include _start_card_column.htm %}
+{% include _start_row.htm %}
 
 {% include _create_card.htm
 src="https://github.com/NeuralMiner.png"
@@ -111,10 +108,10 @@ title="Pythonix"
 text="Twitter Manager"
 %}
 
-{% include _end_card_column.htm %}
+{% include _end_row.htm %}
 
 ## Related Platforms/Tool Developers
-{% include _start_card_column.htm %}
+{% include _start_row.htm %}
 
 
 {% include _create_card.htm
@@ -146,11 +143,11 @@ title="bryhardt (bgb)"
 text="Grcpool Developer"
 %}
 
-{% include _end_card_column.htm %}
+{% include _end_row.htm %}
 
 
 ## Package Managers
-{% include _start_card_column.htm %}
+{% include _start_row.htm %}
 
 {% include _create_card.htm
 src="https://github.com/caraka.png"
@@ -194,15 +191,14 @@ title=" Martin Schimandl (git-giro)"
 text="MacOS Package Manager"
 %}
 
-{% include _end_card_column.htm %}
+{% include _end_row.htm %}
 
 
 
 ## Other Contributors
-A list of many contributors of past and nt can be found on the contributor
-tab of the [Gridcoin-Research repository](https://github.com/gridcoin-community/Gridcoin-Research/graphs/contributors),
+Many contributors of past and present can be found on the contributor tab of the [Gridcoin-Research repository](https://github.com/gridcoin-community/Gridcoin-Research/graphs/contributors),
 the [Gridcoin-Site repository](https://github.com/gridcoin-community/Gridcoin-Site/graphs/contributors), and
-other repositories from gridcoin-community.
+other repositories under [@gridcoin-community](https://github.com/gridcoin-community/).
 
 Countless others work on Gridcoin from community building, translations,
 tools, and more
