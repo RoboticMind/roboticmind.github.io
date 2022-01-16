@@ -44,9 +44,11 @@ function updateDownloads(data) {
     })
 }
 
-fetch("https://api.github.com/repos/gridcoin-community/Gridcoin-Research/releases/latest")
-    .then(response => response.json())
-    .then(updateDownloads)
+if (document.getElementById("wallet-version")){ //only get version data on pages where version number and download links are needed
+    fetch("https://api.github.com/repos/gridcoin-community/Gridcoin-Research/releases/latest")
+        .then(response => response.json())
+        .then(updateDownloads)
+}
 
 //Enable bootstrap tooltips.
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
